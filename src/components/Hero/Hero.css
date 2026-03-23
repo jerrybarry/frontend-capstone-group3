@@ -1,260 +1,154 @@
-/*
-  Hero — Figma specs:
-  width: 1440px, height: 620px
-  background: #051540
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
-
 .hero {
-  width: 100%;
-  height: 620px;
   background-color: #051540;
-  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
 }
 
 .hero-inner {
-  max-width: 1440px;
-  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: space-between;
+  max-width: 1440px; 
   margin: 0 auto;
-  position: relative;
+  padding: 80px 40px;
+  padding-left: 119px; 
+  box-sizing: border-box;
 }
-
-/* ── Left content block ───────────────────────────── */
 
 .hero-content {
-  position: absolute;
-  left: 121px;
-  top: 0;
+  flex: 1; 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start; 
+  max-width: 600px;
 }
 
-/*
-  Heading — Figma:
-  top: 205px from section top
-  width: 549px, height: 116px
-  Inter Bold 700, 48px, line-height 121%
-*/
 .hero-heading {
-  position: absolute;
-  top: 205px;
-  width: 549px;
   font-family: 'Inter', sans-serif;
-  font-weight: 700;
   font-size: 48px;
-  line-height: 121%;
-  letter-spacing: 0%;
+  font-weight: 700;
+  line-height: 1.21;
   color: #ffffff;
-  margin: 0;
+  margin: 0 0 24px 0;
+  text-align: left;
 }
 
-/*
-  Subtext — Figma:
-  top: 341px from section top
-  width: 534px
-  Inter Medium 500, 18px, line-height 160%, letter-spacing -2%
-*/
 .hero-subtext {
-  position: absolute;
-  top: 341px;
-  width: 534px;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
   font-size: 18px;
-  line-height: 160%;
-  letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85); 
+  margin: 0 0 40px 0;
+  text-align: left;
 }
 
-/*
-  Buttons row — sits below subtext
-  Figma shows them at roughly top: 490px from section top
-*/
 .hero-buttons {
-  position: absolute;
-  top: 480px;
   display: flex;
+  flex-direction: row;
   gap: 16px;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #164baf;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  padding: 0 24px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: 44px;
+  border: 0.5px solid #dddddd;
+  border-radius: 8px;
+  padding: 0 24px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.8;
+}
+
+.hero-image-wrapper {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-/*
-  Primary button — Figma:
-  width: 160.5px, height: 44px
-  border-radius: 8px, padding: 0 20px
-  background: #164BAF
-  Inter SemiBold 600, 16px, line-height 150%, letter-spacing -2%
-*/
-.btn-primary {
-  width: 160.5px;
-  height: 44px;
-  padding: 0 20px;
-  background-color: #164BAF;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.02em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  white-space: nowrap;
-}
-
-.btn-primary:hover {
-  background-color: #1a59d1;
-}
-
-/*
-  Secondary button — Figma:
-  width: 160.5px, height: 44px
-  border-radius: 8px, padding: 0 20px
-  background: #051540
-  border: 0.5px solid #DDDDDD
-  Inter SemiBold 600, 16px
-*/
-.btn-secondary {
-  width: 160.5px;
-  height: 44px;
-  padding: 0 20px;
-  background-color: #051540;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.02em;
-  border: 0.5px solid #dddddd;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  white-space: nowrap;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: #ffffff;
-}
-
-/* ── Hero image ───────────────────────────────────── */
-
-/*
-  Image — Figma:
-  width: 644px, height: 644px
-  top: 40px (from section top), left: 737px
-*/
-.hero-image-wrapper {
-  position: absolute;
-  top: 40px;
-  left: 737px;
-  width: 644px;
-  height: 644px;
-}
-
 .hero-image {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
   object-fit: cover;
-  border-radius: 50%;
-  display: block;
+  border-radius: 50%; 
 }
 
-/* ── Responsive ───────────────────────────────────── */
-
-@media (max-width: 1200px) {
-  .hero-image-wrapper {
-    left: auto;
-    right: 40px;
-    width: 480px;
-    height: 480px;
-    top: 70px;
+@media (max-width: 1024px) {
+  .hero-inner {
+    padding-left: 40px;
   }
-
   .hero-heading {
-    width: 460px;
     font-size: 40px;
   }
-
-  .hero-subtext {
-    width: 440px;
+  .hero-image {
+    width: 400px;
+    height: 400px;
   }
 }
 
-@media (max-width: 900px) {
-  .hero {
-    height: auto;
-    padding-bottom: 60px;
-  }
-
+@media (max-width: 768px) {
   .hero-inner {
-    position: static;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0 24px;
+    padding: 60px 20px;
+    text-align: center;
   }
 
   .hero-content {
-    position: static;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    align-items: center; 
+    margin-bottom: 40px;
   }
 
   .hero-heading {
-    position: static;
-    width: 100%;
+    text-align: center;
     font-size: 36px;
-    margin-top: 60px;
-    margin-bottom: 20px;
   }
 
   .hero-subtext {
-    position: static;
-    width: 100%;
-    font-size: 16px;
-    margin-bottom: 32px;
+    text-align: center;
   }
 
   .hero-buttons {
-    position: static;
+    flex-direction: column;
+    width: 100%;
   }
 
-  .hero-image-wrapper {
-    position: static;
+  .btn-primary, 
+  .btn-secondary {
+    width: 100%; 
+  }
+
+  .hero-image {
     width: 300px;
     height: 300px;
-    margin: 40px auto 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-heading {
-    font-size: 30px;
-  }
-
-  .hero-subtext {
-    font-size: 15px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-  }
-
-  .hero-image-wrapper {
-    width: 240px;
-    height: 240px;
   }
 }
