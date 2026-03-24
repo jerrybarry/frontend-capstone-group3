@@ -1,0 +1,109 @@
+.data-table-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.data-table-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #051540;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.planetary-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 0.9rem;
+}
+
+.planetary-table th,
+.planetary-table td {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.planetary-table th {
+  background: #051540;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+}
+
+.planet-name-cell {
+  font-weight: 700;
+  color: #051540;
+  font-size: 1rem;
+}
+
+.planetary-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.planetary-table tbody tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+@media (max-width: 1024px) {
+  .planetary-table th,
+  .planetary-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .data-table-section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .data-table-section h2 {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .planetary-table {
+    font-size: 0.75rem;
+  }
+
+  .planetary-table th,
+  .planetary-table td {
+    padding: 0.5rem 0.25rem;
+  }
+}
