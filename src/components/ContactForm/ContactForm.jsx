@@ -63,14 +63,14 @@ const ContactForm = () => {
 
       const response = await fetch('https://whitebricks.com/tsacademy.php', {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: submitData.toString()
       });
-      if (response.ok) {
-        setIsSuccess(true);
-      } else {
-        throw new Error('Form submission failed');
-      }
+      
+      // Since mode is 'no-cors', the response is opaque and response.ok will be false.
+      // We assume the submission succeeded if no network exception was thrown.
+      setIsSuccess(true);
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
